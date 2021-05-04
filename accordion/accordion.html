@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./accordion.css">
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li class="title">
+                <div>
+                    <span>accordion1</span> 
+                    <button type="button" onclick="expend(0)">+</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolorum eligendi tenetur doloribus mollitia similique sunt ab quod, consequuntur facere?</p>    
+            </li>
+            <li class="title">
+                <div>
+                    <span>accordion2</span>
+                    <button type="button" onclick="expend(1)">+</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet et distinctio asperiores reiciendis voluptatibus laboriosam sint, dicta suscipit odio sunt voluptatum, velit voluptate facere doloribus!</p>
+            </li>
+            <li class="title">
+                <div>
+                    <span>accordion3</span>
+                    <button type="button" onclick="expend(2)">+</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, exercitationem.</p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var paragraph = document.querySelectorAll('.title p');
+    var btns = document.querySelectorAll('.title div button');
+function expend(index){
+    if(paragraph[index].style.display !== 'block'){
+        paragraph[index].style.display = 'block';
+        console.dir(paragraph[index],'---')
+        paragraph[index].style.maxHeight = paragraph[index].scrollHeight + "px";
+        btns[index].innerHTML = '-'
+    }else{
+        paragraph[index].style.maxHeight = null;
+        paragraph[index].style.display = 'none';
+        btns[index].innerHTML = '+'
+
+    }
+}
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dropdown.css">
+</head>
+<body>
+    <div class="container">
+        <button type="button">dropdown</button>
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+        </ul>
+    </div>
+    <div class="container">
+        <button>dropdown</button>
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var btn = document.querySelector('.container:nth-child(2) > button');
+    console.log(btn,'---btn')
+    var container = document.querySelector('.container:nth-child(2)')
+    btn.addEventListener('click',open);
+    function open(){
+        container.classList.toggle('active');
+    }
+</script>
+</html>

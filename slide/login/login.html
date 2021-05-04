@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="login-button">
+         <span>login form</span>
+        <button type="button" onclick="loginFormDialog(true)">Login</button>
+    </div>
+    <div class="login-form">
+        <button onclick="loginFormDialog(false)">X</button>
+        <form action="">
+            <div class="profile"></div>
+            <div class="input-container">
+                <div class="login-section">
+                    <label for="id">
+                        <span>User Id</span>
+                        <input type="text" id="id">
+                    </label>
+                </div>
+                <div class="login-section">
+                    <label for="pwd">
+                        <span>User Password</span>    
+                        <input type="password" id="pwd">
+                    </label>
+                </div>
+                <button type="button">Log in</button>
+                <label for="rememberMe">
+                    <input type="checkbox" name="remember-me" id="rememberMe">
+                    <span>Remember me</span>
+                </label>
+                <p>forgot <a href="#">password?</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="dim"></div>
+</body>
+<script>
+    var loginFormBtn = document.querySelector('.login-form');
+    var dim = document.querySelector('.dim');
+    function loginFormDialog(state){
+        if(state){
+            dim.style.display = 'block';
+            loginFormBtn.style.display = 'block';
+        } else{
+            dim.style.display = 'none';
+            loginFormBtn.style.display = 'none';
+        }
+    }
+</script>
+</html>

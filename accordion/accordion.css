@@ -1,0 +1,44 @@
+ul{
+    list-style: none;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+.container{
+    max-width: 800px;
+    margin:0 auto;
+}
+
+.title{
+    margin-bottom:1px;
+}
+
+.title div{
+position:relative;
+background: rgb(201, 201, 201); 
+padding:10px 15px;
+border-radius: 5px 5px 0 0;
+}
+
+
+.title button{
+    position: absolute;
+    font-size:20px;
+    top: 7px;
+    right: 7px;
+    transition: 0.4s;
+}
+
+.title p{
+    display:none;
+    margin:0;
+    padding:10px 15px;
+    background-color: rgb(247, 231, 208);
+    transition: 0.3s;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}

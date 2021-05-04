@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./infinite-scroll.css">
+</head>
+<body>
+    <div class="wrap">
+        <section class="sec01">
+            <h2 class="com_tit">INFINITE SCROLL</h2>
+            <article class="sc_infinity">
+                <ul class="list">
+                    <li>
+                        <figure>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                        </figure>
+                    </li>
+                </ul>
+            </article>
+            <div class="footer">
+                <p>FOOTER</p>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    (function(){
+        var target = document.querySelector('.sc_infinity .list');
+        console.dir(target,'--target');
+        var breakList = 10;
+        var listCount = 0;
+
+        var winTop;
+        var onTop;
+
+        function getList(){
+            var list;
+
+            listCount++;
+
+            if(listCount > breakList){
+                list = null;
+            }else{
+                list = '<li><figure></figure></li>';
+                list += '<li><figure></figure></li>';
+                list += '<li><figure></figure></li>';
+            }
+
+            return list;
+        }
+
+        function listCall(){
+            winTop = window.innerHeight;
+            onTop = window.pageYOffset - document.querySelector('.footer').scrollHeight;
+            console.log(winTop,'---winTop')
+            console.log(onTop,'---onTop')
+           
+            if(winTop>=onTop){
+                var data =getList();
+                if(data !== null){
+                    target.insertAdjacentHTML('beforeend',data)
+                    
+               }else{
+                   return false;
+               }
+            }
+        }
+
+        listCall();
+
+        window.onscroll = function(){
+            listCall();
+        }
+
+         
+    })()
+</script>
+</html>
